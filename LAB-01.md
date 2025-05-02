@@ -95,7 +95,7 @@ cd /var/log
 
 צור תיקייה בשם ניסוי וכתוב לתוכה קובץ:
 ```bash
-mkdir ניסוי && echo 'בדיקה' > ניסוי/בדיקה.txt
+mkdir test && echo 'i love tivonim' >> tivonily.txt
 ```
 
 ## 📝 עריכה פשוטה
@@ -137,7 +137,7 @@ less file1.txt
 
 צור קובץ חדש עם שורות טקסט:
 ```bash
-echo -e "שורה1\nשורה2" > multi.txt
+echo -e "tivonily" > multi.txt
 ```
 
 חפש מילה בקובץ:
