@@ -343,3 +343,41 @@
 בדוק זמינות חיבור לאינטרנט:
 `curl -I http://example.com`
 
+
+# תרגול חופשי
+
+צור את הספרייה Data ובתוכה את הקבצים הבאים (שים לב לקבצים נסתרים):  
+   .data1, data2, data_3, .data, my_name  
+
+צור את הספרייה Zoo ובתוכה את הקבצים:  
+   Visitors, animals, keeper  
+
+צור את הספרייה Progs ובתוכה את הקבצים:  
+   .prog1.c, prog2.c, small_prog, medium_prog, .pro1.exe, my_prog  
+
+צור את הספרייה Family בתוך ספרית Zoo.
+
+השתמש בעורך הטקסט nano. צור קובץ בשם name_My וכתוב בו את שמך בשורה הראשונה וכתובתך בשורה השנייה.
+
+צור קובץ בשם family_My וכתוב בו שמות שלושה בני משפחה – אחד בכל שורה.
+
+וודא כי הקבצים תחת ספריית Family.
+
+העתק את קובץ name_My לקובץ בשם name.
+
+שנה שמו של קובץ family_My ל-Family.
+
+צור קובץ בשם family_Whole המורכב משרשור Family ו-name.  
+    `cat name Family >> Whole_family`
+
+הצג את family_Whole.
+
+עבור ל-directory home שלך.
+
+שנה את שם ספריית Zoo ל-zoo_My.
+
+העתק את ספריית Family על תוכנה ל-directory home שלך.
+
+מחק את ספריית zoo_My על תוכנה.
+
+חשב את נפח ספריית הבית שלך באמצעות.
