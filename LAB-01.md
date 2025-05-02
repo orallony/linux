@@ -1,348 +1,564 @@
 # תרגול בלינוקס - LAB-01
 
 ## 📁 ניווט וקבצים
-פתח את הטרמינל.
 
+פתח את הטרמינל.
 הצג את התיקייה הנוכחית בה אתה נמצא:
-`pwd`
+```bash
+pwd
+```
 
 הצג את כל הקבצים בתיקייה הנוכחית:
-`ls`
+```bash
+ls
+```
 
 הצג גם קבצים מוסתרים:
-`ls -a`
+```bash
+ls -a
+```
 
 עבור לתיקיית הבית:
-`cd ~`
+```bash
+cd ~
+```
 
 עבור לתיקיית Documents:
-`cd Documents`
+```bash
+cd Documents
+```
 
 חזור תיקייה אחת אחורה:
-`cd ..`
+```bash
+cd ..
+```
 
 צור תיקייה בשם test:
-`mkdir test`
+```bash
+mkdir test
+```
 
 עבור לתוך התיקייה test:
-`cd test`
+```bash
+cd test
+```
 
 צור קובץ ריק בשם file1.txt:
-`touch file1.txt`
+```bash
+touch file1.txt
+```
 
 צא מהתיקייה הנוכחית:
-`cd ..`
+```bash
+cd ..
+```
 
 מחק תיקייה ריקה בשם test2:
-`rmdir test2`
+```bash
+rmdir test2
+```
 
 צור כמה תיקיות יחד:
-`mkdir -p a/b/c`
+```bash
+mkdir -p a/b/c
+```
 
 הצג עץ תיקיות:
-`ls -R`
+```bash
+ls -R
+```
 
 העתק תיקייה עם כל התוכן:
-`cp -r a/ b/`
+```bash
+cp -r a/ b/
+```
 
 עבור לתיקייה העליונה ביותר:
-`cd /`
+```bash
+cd /
+```
 
 בדוק כמה מקום תופסות תיקיות:
-`du -sh *`
+```bash
+du -sh *
+```
 
 בדוק כמה מקום פנוי בדיסק:
-`df -h`
+```bash
+df -h
+```
 
 עבור לתיקייה לפי נתיב מוחלט:
-`cd /var/log`
+```bash
+cd /var/log
+```
 
 צור תיקייה בשם ניסוי וכתוב לתוכה קובץ:
-`mkdir ניסוי && echo 'בדיקה' > ניסוי/בדיקה.txt`
-
+```bash
+mkdir ניסוי && echo 'בדיקה' > ניסוי/בדיקה.txt
+```
 
 ## 📝 עריכה פשוטה
+
 כתוב לקובץ:
-`echo "Hello Linux" > file1.txt`
+```bash
+echo "Hello Linux" > file1.txt
+```
 
 הוסף שורה נוספת:
-`echo "Another line" >> file1.txt`
+```bash
+echo "Another line" >> file1.txt
+```
 
 הצג את תוכן הקובץ:
-`cat file1.txt`
+```bash
+cat file1.txt
+```
 
 הצג את תחילת הקובץ:
-`head file1.txt`
+```bash
+head file1.txt
+```
 
 הצג את סוף הקובץ:
-`tail file1.txt`
+```bash
+tail file1.txt
+```
 
 ערוך קובץ עם עורך nano:
-`nano file1.txt`
+```bash
+nano file1.txt
+```
 
 הצג תוכן מדורג:
-`less file1.txt`
+```bash
+less file1.txt
+```
 
 צור קובץ חדש עם שורות טקסט:
-`echo -e "שורה1\nשורה2" > multi.txt`
+```bash
+echo -e "שורה1\nשורה2" > multi.txt
+```
 
 חפש מילה בקובץ:
-`grep "Hello" file1.txt`
+```bash
+grep "Hello" file1.txt
+```
 
 מיין שורות בקובץ:
-`sort file1.txt`
+```bash
+sort file1.txt
+```
 
 מחק קובץ:
-`rm file1.txt`
+```bash
+rm file1.txt
+```
 
 שמור פלט של פקודה לקובץ:
-`ls > list.txt`
+```bash
+ls > list.txt
+```
 
 צרף שני קבצים:
-`cat a.txt b.txt > c.txt`
+```bash
+cat a.txt b.txt > c.txt
+```
 
 מנה מספר תווים בקובץ:
-`wc -m file1.txt`
+```bash
+wc -m file1.txt
+```
 
 מנה מילים בקובץ:
-`wc -w file1.txt`
-
+```bash
+wc -w file1.txt
+```
 
 ## 🔄 ניהול קבצים ותיקיות
+
 צור תיקייה בשם backup והעתק אליה קובץ:
-`mkdir backup`
-`cp file1.txt backup/`
+```bash
+mkdir backup
+cp file1.txt backup/
+```
 
 שנה שם של קובץ:
-`mv file1.txt notes.txt`
+```bash
+mv file1.txt notes.txt
+```
 
 מחק קובץ:
-`rm notes.txt`
+```bash
+rm notes.txt
+```
 
 מחק תיקייה עם תוכן:
-`rm -r backup`
+```bash
+rm -r backup
+```
 
 העתק כמה קבצים יחד:
-`cp *.txt folder/`
+```bash
+cp *.txt folder/
+```
 
 העבר קובץ מתיקייה לתיקייה אחרת:
-`mv file.txt folder/`
+```bash
+mv file.txt folder/
+```
 
 שמור עותק של קובץ בשם אחר:
-`cp notes.txt notes_backup.txt`
+```bash
+cp notes.txt notes_backup.txt
+```
 
 השווה בין שני קבצים:
-`diff file1.txt file2.txt`
+```bash
+diff file1.txt file2.txt
+```
 
 בדוק אם קובץ קיים:
-`[ -f file1.txt ] && echo "קיים"`
+```bash
+[ -f file1.txt ] && echo "קיים"
+```
 
 בדוק אם תיקייה קיימת:
-`[ -d folder ] && echo "תיקייה קיימת"`
+```bash
+[ -d folder ] && echo "תיקייה קיימת"
+```
 
 צור תיקייה עם רווח בשם:
-`mkdir "my folder"`
+```bash
+mkdir "my folder"
+```
 
 העתק קובץ מהורדה לתיקיית הבית:
-`cp ~/Downloads/file.txt ~`
+```bash
+cp ~/Downloads/file.txt ~
+```
 
 הפוך קובץ לקריא בלבד:
-`chmod 444 file.txt`
+```bash
+chmod 444 file.txt
+```
 
 הפוך קובץ לבעל הרשאות כתיבה:
-`chmod +w file.txt`
+```bash
+chmod +w file.txt
+```
 
 צור קובץ מוסתר:
-`touch .hidden.txt`
-
-
+```bash
+touch .hidden.txt
+```
 ## 🔍 חיפוש ומידע
+
 חפש קובץ בשם notes.txt:
-`find . -name "notes.txt"`
+```bash
+find . -name "notes.txt"
+```
 
 ראה מידע על קובץ:
-`ls -l notes.txt`
+```bash
+ls -l notes.txt
+```
 
 בדוק את סוג הקובץ:
-`file notes.txt`
+```bash
+file notes.txt
+```
 
 ספר שורות בקובץ:
-`wc -l notes.txt`
+```bash
+wc -l notes.txt
+```
 
 מצא קבצים ששונו היום:
-`find . -type f -mtime 0`
+```bash
+find . -type f -mtime 0
+```
 
 מצא קבצים גדולים מ־10MB:
-`find . -size +10M`
+```bash
+find . -size +10M
+```
 
 מצא קבצים עם סיומת log:
-`find /var/log -name "*.log"`
+```bash
+find /var/log -name "*.log"
+```
 
 מצא קובץ לפי תוכן:
-`grep -r "error" .`
+```bash
+grep -r "error" .
+```
 
 חפש מילה בתוך קובץ:
-`grep "Linux" file1.txt`
+```bash
+grep "Linux" file1.txt
+```
 
 חפש מילה ללא תלות באותיות גדולות/קטנות:
-`grep -i "linux" file1.txt`
+```bash
+grep -i "linux" file1.txt
+```
 
 מצא קבצים בלי הרשאות קריאה:
-`find . ! -readable`
+```bash
+find . ! -readable
+```
 
 בדוק למי שייך קובץ:
-`ls -l file.txt`
+```bash
+ls -l file.txt
+```
 
 מצא קבצים ריקים:
-`find . -type f -empty`
+```bash
+find . -type f -empty
+```
 
 מצא קבצים שנערכו בשעה האחרונה:
-`find . -type f -mmin -60`
+```bash
+find . -type f -mmin -60
+```
 
 מצא קבצים לפי שם שמכיל חלק:
-`find . -name "*report*"`
-
+```bash
+find . -name "*report*"
+```
 
 ## ⚙️ הרשאות וביצוע
+
 צור קובץ script.sh:
-`echo "echo Hello" > script.sh`
+```bash
+echo "echo Hello" > script.sh
+```
 
 תן הרשאות הרצה:
-`chmod +x script.sh`
+```bash
+chmod +x script.sh
+```
 
 הרץ את הסקריפט:
-`./script.sh`
+```bash
+./script.sh
+```
 
 בדוק את ההרשאות של קובץ:
-`ls -l script.sh`
+```bash
+ls -l script.sh
+```
 
 שנה בעלות על קובץ:
-`sudo chown username file.txt`
+```bash
+sudo chown username file.txt
+```
 
 מנע הרצת קובץ:
-`chmod -x script.sh`
+```bash
+chmod -x script.sh
+```
 
 אפשר הרצת סקריפט דרך bash:
-`bash script.sh`
+```bash
+bash script.sh
+```
 
 צפה בתהליכים רצים:
-`ps aux`
+```bash
+ps aux
+```
 
 הפסק תהליך לפי מספר זיהוי:
-`kill PID`
+```bash
+kill PID
+```
 
 הרץ תהליך ברקע:
-`./script.sh &`
+```bash
+./script.sh &
+```
 
 הצג פקודות שהרצת:
-`history`
+```bash
+history
+```
 
 נקה את ההיסטוריה:
-`history -c`
+```bash
+history -c
+```
 
 הרץ פקודה בשם אחר:
-`alias ll="ls -l"`
+```bash
+alias ll="ls -l"
+```
 
 הסר alias:
-`unalias ll`
+```bash
+unalias ll
+```
 
 צור סקריפט שמבצע חישוב:
-`echo "echo $((2+3))" > math.sh`
-
+```bash
+echo "echo $((2+3))" > math.sh
+```
 
 ## 📦 ניהול תוכנה
+
 בדוק גרסת מערכת:
-`uname -a`
+```bash
+uname -a
+```
 
 בדוק אם curl מותקן:
-`which curl`
+```bash
+which curl
+```
 
 התקן curl:
-`sudo apt install curl`
+```bash
+sudo apt install curl
+```
 
 הסר curl:
-`sudo apt remove curl`
+```bash
+sudo apt remove curl
+```
 
 חפש חבילה במאגר:
-`apt search nano`
+```bash
+apt search nano
+```
 
 עדכן את רשימת החבילות:
-`sudo apt update`
+```bash
+sudo apt update
+```
 
 שדרג את המערכת:
-`sudo apt upgrade`
+```bash
+sudo apt upgrade
+```
 
 הצג גרסה של חבילה:
-`apt show nano`
+```bash
+apt show nano
+```
 
 בדוק אם git מותקן:
-`git --version`
+```bash
+git --version
+```
 
 התקן git:
-`sudo apt install git`
+```bash
+sudo apt install git
+```
 
 בדוק מקום פנוי:
-`df -h`
+```bash
+df -h
+```
 
 בדוק זיכרון פנוי:
-`free -h`
+```bash
+free -h
+```
 
 בדוק אם תוכנה פועלת:
-`systemctl status ssh`
+```bash
+systemctl status ssh
+```
 
 התחל שירות:
-`sudo systemctl start ssh`
+```bash
+sudo systemctl start ssh
+```
 
 הפעל שירות עם אתחול:
-`sudo systemctl enable ssh`
-
+```bash
+sudo systemctl enable ssh
+```
 
 ## 🧠 כלים שימושיים
+
 תיעוד לפקודה:
-`man ls`
+```bash
+man ls
+```
 
 נקה את המסך:
-`clear`
+```bash
+clear
+```
 
 צא מהטרמינל:
-`exit`
+```bash
+exit
+```
 
 שנה סיסמה:
-`passwd`
+```bash
+passwd
+```
 
 ראה מי מחובר למערכת:
-`who`
+```bash
+who
+```
 
 בדוק את הזמן הנוכחי:
-`date`
+```bash
+date
+```
 
 בדוק את שם המשתמש שלך:
-`whoami`
+```bash
+whoami
+```
 
 ראה את שם המחשב:
-`hostname`
+```bash
+hostname
+```
 
 צור alias לפקודה נפוצה:
-`alias cls="clear"`
+```bash
+alias cls="clear"
+```
 
 בדוק את כתובת ה-IP שלך:
-`ip a`
+```bash
+ip a
+```
 
 שלח פינג לאתר:
-`ping google.com`
+```bash
+ping google.com
+```
 
 חשב md5 של קובץ:
-`md5sum file.txt`
+```bash
+md5sum file.txt
+```
 
 צפה בכוננים מחוברים:
-`lsblk`
+```bash
+lsblk
+```
 
 מצא מיקום של תוכנה:
-`whereis nano`
+```bash
+whereis nano
+```
 
 בדוק זמינות חיבור לאינטרנט:
-`curl -I http://example.com`
-
+```bash
+curl -I http://example.com
+```
 
 # תרגול חופשי
 
