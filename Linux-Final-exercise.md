@@ -1,43 +1,72 @@
-# Linux Advanced Exercises
+# Linux Final Exercise 8855/21 2026
 
-## Exercise 1: Advanced Navigation and File Operations
-1. Use the `ls -l` command to list files and directories in the current location with detailed information.
-2. Navigate to your home directory using a relative path with the `cd` command.
-3. Create a directory structure: Inside your home directory, create `projects` directory, and within it, create `project1` and `project2` directories using a single command.
-4. Move the `duplicate.txt` file from `exercise_folder` to `project1` using a single `mv` command.
-5. Rename `project2` to `completed_project` using the `mv` command.
+---
 
-## Exercise 2: Text Editing and Input/Output Redirection
-1. Use `nano` to edit `duplicate.txt` and add some sample text to it.
-2. Use the `cat` command to display the contents of `duplicate.txt` while numbering all lines.
-3. Create a new file called `output.txt` and use `echo` to write the contents of `duplicate.txt` into `output.txt`.
-4. Append the contents of `duplicate.txt` to `output.txt` using the `>>` operator.
+## Exercise 1: Basic Filesystem Operations and Navigation
 
-## Exercise 3: Advanced File Manipulation
-1. Inside `project1`, create a directory named `images`.
-2. Move all files from `exercise_folder` into `images`.
-3. Use the `rm -r` command to remove the `exercise_folder` and its contents.
-4. Create a hard link named `hardlink.txt` to `duplicate.txt` using the `ln` command.
-5. Check the inode numbers of `duplicate.txt` and `hardlink.txt` using the `ls -i` command.
-6. Investigate the manual for the `rm` command using the `man` command.
+1. Navigate to your home directory and create a directory named `tivonily_basics`.
+2. Enter the `tivonily_basics` directory and create three files: `tivonily1.txt`, `tivonily2.txt`, and `tivonily3.txt`.
+3. List the files in the directory using a long listing format and verify their creation.
+4. Delete `tivonily3.txt`.
+5. Rename `tivonily1.txt` to `renamed_tivonily.txt`.
 
-## Exercise 4: Advanced Permissions and Ownership
-1. Create a new group called `developers` using the `addgroup` command.
-2. Add both `student` and `student2` to the `developers` group using the `usermod` command.
-3. Set the group ownership of the `project1` directory to the `developers` group using the `chown` command.
-4. Grant execute permissions for the owner and the group on `output.txt` using `chmod`.
-5. Create a new user named `manager` and make them the owner of the `completed_project` directory using `chown`.
+---
 
-## Exercise 5: Symbolic and Hard Links
-1. Create a symbolic link named `sym_link.txt` pointing to `duplicate.txt` using the `ln -s` command.
-2. Verify the symbolic link by listing files with `ls -l`.
-3. Create another hard link to `output.txt` named `output_hardlink.txt`.
-4. Delete the original `output.txt` file. Check if you can still access its content through `output_hardlink.txt`.
-5. Identify the differences between symbolic links and hard links using the `stat` command on both types of links.
+## Exercise 2: Filesystem Exploration and Core Shell Commands
 
-## Exercise 6: Basic Regular Expressions (Regex)
-1. Use `grep` to find all occurrences of the word `error` in a file named `log.txt`.
-2. Search for lines starting with the word `Warning` in `log.txt`.
-3. Find lines ending with the word `completed` in `log.txt`.
-4. Using `grep`, list lines containing either `error` or `failed` from `log.txt`.
-5. Use `grep` to match lines with exactly 5 characters from a file named `codes.txt`.
+1. List the contents of the root directory (`/`) and explore the following directories: `/usr`, `/etc`, `/boot`, `/var`, and `/dev`.
+2. Use the `file` command to determine the type of different entries in the root directory (for example: directory, regular file, symbolic link, block device).
+3. Use `pwd` to display your current working directory, then navigate to `/`, move to `/usr`, and finally return to your home directory using both `cd` with no arguments and `cd ~`.
+4. In your home directory, create a new directory named `tivonily_test` and inside it create four files using expansion: `tivonily_1.txt` to `tivonily_4.txt`.
+5. Copy one of the files to a new file named `copy_of_tivonily_1.txt`, rename it to `renamed_tivonily_copy.txt`, and remove the copied file.
+
+---
+
+## Exercise 3: Permissions, umask, and Ownership Management
+
+1. Create a file named `tivonily_symb.txt` and use symbolic `chmod` syntax to grant read, write, and execute permissions to owner, group, and others.
+2. Create a file named `tivonily_num.txt` and use numeric `chmod` syntax to set permissions so that:
+
+   * Owner has full permissions
+   * Group has read and execute permissions
+   * Others have no permissions
+3. Set the default file creation mask to `0022` using `umask`, and verify that it was applied.
+4. Create two users and groups:
+
+   * User `carlo` with group `fofo`
+   * User `lala` with group `bobo`
+5. Create a file named `tivonily_data.txt` and change its ownership to `carlo`. Then create a directory named `tivonily_docs` and change its group ownership to `fofo`.
+
+---
+
+## Exercise 4: Text Processing, Wildcards, and Regular Expressions
+
+1. Create the following files with the specified content:
+
+   * `tivonily_example.txt` (basic demonstration text)
+   * `tivonily_sample.txt` (text including the word Linux)
+   * `tivonily_data.txt` (different variations of the word linux in different cases)
+   * `tivonily_logfile.txt` (at least 15 numbered lines)
+2. Display the contents of `tivonily_example.txt` using `cat`.
+3. Search for the word "Linux" in `tivonily_sample.txt` using `grep`.
+4. Display the first 10 lines of `tivonily_data.txt` using `head` and the last 10 lines of `tivonily_logfile.txt` using `tail`.
+5. Use wildcards to:
+
+   * List files starting with `t`
+   * List files with exactly five characters where the third character is `v`
+   * List files ending with `.txt` or `.pdf`
+     Then use `grep` with a regular expression to display lines in `tivonily_data.txt` that start with the word "linux" (case insensitive).
+
+---
+
+## Exercise 5: User Management, Processes, Packages, Services, and Scheduling
+
+1. Add a new user named `carlo`, rename it to `fofo`, and then delete the user from the system.
+2. Create a group named `lala`, rename it to `bobo`, and then delete the group.
+3. Use `top` to observe running processes, use `ps` to list active processes, use `pgrep` to find a specific process ID, and terminate a chosen process using `kill`.
+4. Install the `nginx` web server using the system package manager, then remove it from the system.
+5. Use `systemctl` to start, stop, enable, and disable the nginx service, and finally create a cron job that runs every hour and writes the text `Hello, tivonily world` into a file named `tivonily_hello.txt`.
+
+---
+
+Good Luck!
